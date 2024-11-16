@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Product List</h1>
+      <input
+        type="text"
+        id="search-bar"
+        placeholder="Search products by name..."
+        oninput="filterProducts()"
+      />
+      <select id="category-filter" onchange="fetchProducts()">
+        <option value="">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="home">Home</option>
+      </select>
+    </header>
+    <main>
+      <div id="product-list" class="product-list">
+        <!-- Products will load dynamically -->
+        <div class="product">
+          <div>
+              <h3>smartphone</h3>
+              <p>High-end smartphone.</p>
+              <p><strong>Price:</strong> 699</p>
+          </div>
+          <button class="details-button" onclick="showDetails('smartphone')">Details</button>
+      </div>
+      <div class="product">
+          <div>
+              <h3>Laptop</h3>
+              <p>Powerful Laptop for Work.</p>
+              <p><strong>Price:</strong> 1299</p>
+          </div>
+          <button class="details-button" onclick="showDetails('Laptop')">Details</button>
+      </div>
+      <div class="product">
+          <div>
+              <h3>T-Shirt</h3>
+              <p>Cotton T-Shirt .</p>
+              <p><strong>Price:</strong> 25</p>
+          </div>
+          <button class="details-button" onclick="showDetails('T-shirt')">Details</button>
+      </div>
+      <div class="product">
+          <div>
+              <h3>Jeans</h3>
+              <p>Denim Jeans.</p>
+              <p><strong>Price:</strong> 50</p>
+          </div>
+          <button class="details-button" onclick="showDetails('Jeans')">Details</button>
+      </div>
+      <div class="product">
+          <div>
+              <h3>Coffee Maker</h3>
+              <p>Automatic Coffee Maker.</p>
+              <p><strong>Price:</strong> 99</p>
+          </div>
+          <button class="details-button" onclick="showDetails('Coffee Maker')">Details</button>
+      </div>
+      </div>
+    </main>
+    <div id="product-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-details"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
